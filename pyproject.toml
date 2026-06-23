@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=62.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aura-assistant"
+version = "0.1.0"
+description = "A voice-driven AI assistant enabling independent computer use for blind and visually impaired users"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "KBCIN"}
+]
+keywords = ["accessibility", "voice-assistant", "blind", "screen-reader", "ai"]
+
+[project.urls]
+Homepage = "https://github.com/YOUR_USERNAME/aura"
+Repository = "https://github.com/YOUR_USERNAME/aura"
+
+[tool.setuptools.packages.find]
+include = ["aura*"]

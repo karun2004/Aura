@@ -1,0 +1,51 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment
+.env
+.env.local
+
+# Model weights (large files - download separately)
+*.gguf
+*.bin
+*.pt
+*.pth
+models/*.onnx
+!models/.gitkeep
+
+# Training artifacts (large, regenerable)
+training/data/
+training/output/
+openwakeword_training/
+*.npy
+
+# Audio data (large, regenerable)
+audioset*/
+mit_rirs/
+fma/
+generated_samples/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log

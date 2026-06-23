@@ -1,0 +1,53 @@
+## Training config for "Hey AURA" wake word model
+## Used with openWakeWord's train.py
+
+model_name: "hey_aura"
+
+target_phrase:
+  - "hey aura"
+
+custom_negative_phrases: []
+
+# Sample counts (30k+ recommended for production quality)
+n_samples: 30000
+n_samples_val: 3000
+
+tts_batch_size: 50
+augmentation_batch_size: 16
+
+# Path to dscripka's fork of piper-sample-generator
+piper_sample_generator_path: "./piper-sample-generator"
+
+# Path to the Piper TTS voice model
+piper_model_path: "./piper-sample-generator/models/en_US-libritts_r-medium.pt"
+
+output_dir: "./my_custom_model"
+
+rir_paths:
+  - "./mit_rirs"
+
+background_paths:
+  - "./audioset_16k"
+
+background_paths_duplication_rate:
+  - 1
+
+false_positive_validation_data_path: "./training_data/validation_set_features.npy"
+
+augmentation_rounds: 1
+
+feature_data_files:
+  "ACAV100M_sample": "./training_data/openwakeword_features_ACAV100M_2000_hrs_16bit.npy"
+
+batch_n_per_class:
+  "ACAV100M_sample": 1024
+  "adversarial_negative": 50
+  "positive": 50
+
+model_type: "dnn"
+layer_size: 32
+
+steps: 30000
+
+max_negative_weight: 1500
+target_false_positives_per_hour: 0.2
